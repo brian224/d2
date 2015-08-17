@@ -37,23 +37,29 @@ body {
 	overflow    : hidden;
 }
 
-.Wrap {
-	margin : 0 auto;
-	width  : 1200px;
-}
 
 .l-header {
+	width    : 100%;
 	position : fixed;
+	z-index  : 3;
 
-	&:before {
-		content    : '';
-		background : #39bdb1;
-		display    : block;
-		width      : 500px;
-		height     : 100%;
-		position   : absolute;
-		top        : 0;
-		left       : -500px;
+	.main-menu {
+		@include box-sizing(border-box);
+		margin   : 0 auto;
+		padding  : 0 0 0 87px;
+		width    : 1200px;
+		position : relative;
+
+		&:before {
+			content    : '';
+			background : #39bdb1;
+			display    : block;
+			width      : 500px;
+			height     : 100%;
+			position   : absolute;
+			top        : 0;
+			left       : -413px;
+		}
 	}
 
 	.menu-list {
@@ -61,13 +67,12 @@ body {
 
 		&:after {
 			content       : '';
-			margin-left   : -58px;
 			position      : relative;
 			float         : left;
-			border-top    : 36px solid transparent;
-			border-right  : 29px solid #80cac3;
-			border-bottom : 36px solid #80cac3;
-			border-left   : 29px solid transparent;
+			border-top    : 36px solid #1f998d;
+			border-right  : 29px solid transparent;
+			border-bottom : 36px solid transparent;
+			border-left   : 29px solid #1f998d;
 			z-index       : 2;
 		}
 
@@ -164,7 +169,7 @@ body {
 				}
 
 				&.facebook {
-					width : 95px;
+					width : 37px;
 
 					&:after {
 						margin-top          : -12px;
@@ -179,16 +184,24 @@ body {
 }
 
 .midWrap {
+	position : relative;
+
+	.content-Wrap {
+		@include box-sizing(border-box);
+		margin  : 0 auto;
+		padding : 0 0 0 87px;
+		width   : 1200px;
+	}
+
+	.main-title, .sub-title, .desc, .emphasize {
+		background : image-url('text.png') no-repeat 0 0;
+		display    : block;
+	}
+
 	.mainContent {
 		@include box-sizing(border-box);
 		padding-top : 138px;
-		height      : 100vh;
-		min-height  : 600px;
-
-		.main-title, .sub-title, .desc, .emphasize {
-			background : image-url('text.png') no-repeat 0 0;
-			display    : block;
-		}
+		height      : 750px;
 
 		.main-title {
 			margin : 0 0 37px 0;
@@ -215,6 +228,172 @@ body {
 			background-position : 0 -259px;
 			width               : 352px;
 			height              : 23px;
+		}
+
+		.btn-link {
+			margin-left : 75px;
+			background  : #f3eb6a;
+			display     : block;
+			width       : 210px;
+			height      : 56px;
+			position    : relative;
+			border      : 2px solid #000;
+
+			&:before {
+				content    : '';
+				margin-top : -13px;
+				background : image-url('btn.png') no-repeat 0 0;
+				display    : block;
+				width      : 123px;
+				height     : 27px;
+				position   : absolute;
+				top        : 50%;
+				left       : 32px;
+			}
+
+			&:after {
+				content       : '';
+				margin-top    : -14px;
+				display       : block;
+				position      : absolute;
+				top           : 50%;
+				right         : 20px;
+				border-top    : 14px solid transparent;
+				border-bottom : 14px solid transparent;
+				border-left   : 24px solid #000;
+			}
+		}
+	}
+
+	.activity-time {
+		padding     : 24px 0;
+		background  : #ddd12d;
+		position    : relative;
+
+		.content-Wrap {
+			padding-right : 635px;
+			position      : relative;
+		}
+
+		.sub-title {
+			margin              : 0 0 96px 0;
+			background-position : 0 -282px;
+			width               : 218px;
+			height              : 47px;
+			position            : relative;
+			float               : right;
+		}
+
+		.desc {
+			margin              : 0 0 24px 0;
+			background-position : 0 -329px;
+			width               : 342px;
+			height              : 202px;
+			float               : right;
+		}
+
+		.btn-link {
+			background : #f3eb6a;
+			display    : block;
+			width      : 192px;
+			height     : 38px;
+			position   : relative;
+			float      : right;
+			border     : 2px solid #000;
+
+			&:before {
+				content    : '';
+				margin     : -9px 0 0 -40px;
+				background : image-url('btn.png') no-repeat 0 -27px;
+				display    : block;
+				width      : 80px;
+				height     : 18px;
+				position   : absolute;
+				top        : 50%;
+				left       : 50%;
+			}
+
+			&:after {
+				content       : '';
+				margin-top    : -9px;
+				display       : block;
+				position      : absolute;
+				top           : 50%;
+				right         : 35px;
+				border-top    : 9px solid transparent;
+				border-bottom : 9px solid transparent;
+				border-left   : 15px solid #fd005f;
+			}
+		}
+
+		.crossed {
+			top  : 86px;
+			left : 550px;
+		}
+	}
+
+	.crossed {
+		position    : absolute;
+		color       : #000;
+		font-size   : 14px;
+		font-weight : bold;
+		text-shadow : 1px 0 0 rgb(0,0,0);
+	}
+
+	.main-image {
+		background : image-url('main-img.png') no-repeat 0 0;
+		display    : block;
+		width      : 544px;
+		height     : 639px;
+		position   : absolute;
+		top        : 142px;
+		right      : 61px;
+	}
+}
+
+.l-footer {
+	background : #1f998d;
+
+	.footer-link {
+		@include box-sizing(border-box);
+		margin  : 0 auto;
+		padding : 12px 0 0 87px;
+		width   : 1200px;
+		height  : 120px;
+
+		.list {
+			margin-top : 6px;
+			background : image-url('footer.png') no-repeat 0 0;
+			width      : 106px;
+			height     : 37px;
+			float      : left;
+		}
+
+		.copyright {
+			margin              : 26px 0 0 95px;
+			background-position : 0 -37px;
+			width               : 377px;
+			height              : 15px;
+		}
+
+		.fans-club {
+			margin              : 9px 0 0 117px;
+			background-position : 0 -52px;
+			width               : 202px;
+			height              : 24px;
+		}
+
+		.youtube {
+			margin              : 0 0 0 49px;
+			background-position : 0 -76px;
+			width               : 91px;
+			height              : 36px;
+		}
+
+		.link {
+			display : block;
+			width   : 100%;
+			height  : 100%;
 		}
 	}
 }
