@@ -1,0 +1,220 @@
+@import "compass/reset";
+@import "compass";
+/*@import "index-content";*/
+
+body {
+	background : #80cac3;
+}
+
+.both {
+	height   : 100%;
+	clear    : both;
+	overflow : hidden;
+	zoom     : 1;
+}
+
+.middleSet {
+	position  : relative;
+	font-size : 0;
+
+	&:before {
+		content        : '';
+		display        : inline-block;
+		height         : 100%;
+		vertical-align : middle;
+	}
+
+	* {
+		display        : inline-block;
+		font-size      : initial;
+		vertical-align : middle;
+	}
+}
+
+.hide-text {
+	white-space : nowrap;
+	text-indent : 100%;
+	overflow    : hidden;
+}
+
+.Wrap {
+	margin : 0 auto;
+	width  : 1200px;
+}
+
+.l-header {
+	position : fixed;
+
+	&:before {
+		content    : '';
+		background : #39bdb1;
+		display    : block;
+		width      : 500px;
+		height     : 100%;
+		position   : absolute;
+		top        : 0;
+		left       : -500px;
+	}
+
+	.menu-list {
+		position : relative;
+
+		&:after {
+			content       : '';
+			margin-left   : -58px;
+			position      : relative;
+			float         : left;
+			border-top    : 36px solid transparent;
+			border-right  : 29px solid #80cac3;
+			border-bottom : 36px solid #80cac3;
+			border-left   : 29px solid transparent;
+			z-index       : 2;
+		}
+
+		.list {
+			background : #39bdb1;
+			height     : 72px;
+			position   : relative;
+			float      : left;
+
+			&:before {
+				content       : '';
+				position      : absolute;
+				top           : 0;
+				left          : -60px;
+				border-top    : 36px solid transparent;
+				border-right  : 29px solid #80cac3;
+				border-bottom : 36px solid #80cac3;
+				border-left   : 29px solid transparent;
+			}
+
+			&:after {
+				content       : '';
+				position      : absolute;
+				top           : 0;
+				left          : -58px;
+				border-top    : 36px solid transparent;
+				border-right  : 29px solid #39bdb1;
+				border-bottom : 36px solid #39bdb1;
+				border-left   : 29px solid transparent;
+			}
+
+			&:nth-child(5), &:nth-child(6) {
+				background : #1f998d;
+
+				&:after {
+					border-right  : 29px solid #1f998d;
+					border-bottom : 36px solid #1f998d;
+				}
+			}
+
+			.link {
+				display  : block;
+				width    : 98px;
+				height   : 100%;
+				position : relative;
+				z-index  : 2;
+
+				&:after {
+					content    : '';
+					margin-top : -10px;
+					background : image-url('menu.png') no-repeat 0 0;
+					display    : block;
+					width      : 39px;
+					height     : 19px;
+					position   : absolute;
+					top        : 50%;
+					left       : 0;
+				}
+
+				&.activity {
+					width : 128px;
+
+					&:after {
+						background-position : 0 -19px;
+						width               : 80px;
+					}
+				}
+
+				&.vote {
+					width : 128px;
+
+					&:after {
+						background-position : 0 -38px;
+						width               : 80px;
+					}
+				}
+
+				&.winners {
+					width : 128px;
+
+					&:after {
+						background-position : 0 -57px;
+						width               : 80px;
+					}
+				}
+
+				&.join {
+					width : 128px;
+
+					&:after {
+						background-position : 0 -76px;
+						width               : 80px;
+					}
+				}
+
+				&.facebook {
+					width : 95px;
+
+					&:after {
+						margin-top          : -12px;
+						background-position : 0 -95px;
+						width               : 24px;
+						height              : 24px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.midWrap {
+	.mainContent {
+		@include box-sizing(border-box);
+		padding-top : 138px;
+		height      : 100vh;
+		min-height  : 600px;
+
+		.main-title, .sub-title, .desc, .emphasize {
+			background : image-url('text.png') no-repeat 0 0;
+			display    : block;
+		}
+
+		.main-title {
+			margin : 0 0 37px 0;
+			width  : 483px;
+			height : 167px;
+		}
+
+		.sub-title {
+			margin              : 0 0 9px 0;
+			background-position : 0 -167px;
+			width               : 397px;
+			height              : 44px;
+		}
+
+		.desc {
+			margin              : 0 0 44px 0;
+			background-position : 0 -211px;
+			width               : 399px;
+			height              : 48px;
+		}
+
+		.emphasize {
+			margin              : 0 0 30px 0;
+			background-position : 0 -259px;
+			width               : 352px;
+			height              : 23px;
+		}
+	}
+}
