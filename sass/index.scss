@@ -230,40 +230,6 @@ body {
 			width               : 352px;
 			height              : 23px;
 		}
-
-		.btn-link {
-			margin-left : 75px;
-			background  : #f3eb6a;
-			display     : block;
-			width       : 210px;
-			height      : 56px;
-			position    : relative;
-			border      : 2px solid #000;
-
-			&:before {
-				content    : '';
-				margin-top : -13px;
-				background : image-url('btn.png') no-repeat 0 0;
-				display    : block;
-				width      : 123px;
-				height     : 27px;
-				position   : absolute;
-				top        : 50%;
-				left       : 32px;
-			}
-
-			&:after {
-				content       : '';
-				margin-top    : -14px;
-				display       : block;
-				position      : absolute;
-				top           : 50%;
-				right         : 20px;
-				border-top    : 14px solid transparent;
-				border-bottom : 14px solid transparent;
-				border-left   : 24px solid #000;
-			}
-		}
 	}
 
 	.activity-time {
@@ -273,16 +239,15 @@ body {
 		z-index    : 2;
 
 		&:before {
-			content        : '';
-			margin-left    : -960px;
-			position       : absolute;
-			top            : -356px;
-			left           : 50%;
-			border-top     : 219px solid transparent;
-			border-right   : 960px solid #ddd12d;
-			border-bottom  : 219px solid #ddd12d;
-			border-left    : 960px solid transparent;
-			pointer-events : none;
+			content       : '';
+			margin-left   : -960px;
+			position      : absolute;
+			top           : -356px;
+			left          : 50%;
+			border-top    : 219px solid transparent;
+			border-right  : 960px solid #ddd12d;
+			border-bottom : 219px solid #ddd12d;
+			border-left   : 960px solid transparent;
 		}
 
 		.content-Wrap {
@@ -334,39 +299,40 @@ body {
 		.btn-link {
 			background : #f3eb6a;
 			display    : block;
-			width      : 192px;
-			height     : 38px;
-			position   : relative;
-			float      : right;
+			width      : 210px;
+			height     : 56px;
+			position   : absolute;
+			top        : -269px;
+			left       : 162px;
 			border     : 2px solid #000;
 
 			&:before {
 				content    : '';
-				margin     : -9px 0 0 -40px;
-				background : image-url('btn.png') no-repeat 0 -27px;
+				margin-top : -13px;
+				background : image-url('btn.png') no-repeat 0 0;
 				display    : block;
-				width      : 80px;
-				height     : 18px;
+				width      : 123px;
+				height     : 27px;
 				position   : absolute;
 				top        : 50%;
-				left       : 50%;
+				left       : 32px;
 			}
 
 			&:after {
 				content       : '';
-				margin-top    : -9px;
+				margin-top    : -14px;
 				display       : block;
 				position      : absolute;
 				top           : 50%;
-				right         : 35px;
-				border-top    : 9px solid transparent;
-				border-bottom : 9px solid transparent;
-				border-left   : 15px solid #fd005f;
+				right         : 20px;
+				border-top    : 14px solid transparent;
+				border-bottom : 14px solid transparent;
+				border-left   : 24px solid #000;
 			}
 		}
 
 		.crossed {
-			top  : 86px;
+			top  : 51px;
 			left : 550px;
 		}
 	}
@@ -380,16 +346,15 @@ body {
 		z-index    : 3;
 
 		&:before {
-			content        : '';
-			margin-left    : -960px;
-			position       : absolute;
-			top            : -356px;
-			left           : 50%;
-			border-top     : 219px solid transparent;
-			border-right   : 960px solid #37eeab;
-			border-bottom  : 219px solid #37eeab;
-			border-left    : 960px solid transparent;
-			pointer-events : none;
+			content       : '';
+			margin-left   : -960px;
+			position      : absolute;
+			top           : -356px;
+			left          : 50%;
+			border-top    : 219px solid transparent;
+			border-right  : 960px solid #37eeab;
+			border-bottom : 219px solid #37eeab;
+			border-left   : 960px solid transparent;
 		}
 
 		.content-Wrap {
@@ -436,18 +401,19 @@ body {
 		}
 
 		.btn-link {
-			background : #59ffc2;
+			background : #f3eb6a;
 			display    : block;
 			width      : 192px;
 			height     : 38px;
-			position   : relative;
-			float      : left;
+			position   : absolute;
+			top        : -286px;
+			left       : 369px;
 			border     : 2px solid #000;
 
 			&:before {
 				content    : '';
 				margin     : -9px 0 0 -40px;
-				background : image-url('btn.png') no-repeat 0 -45px;
+				background : image-url('btn.png') no-repeat 0 -27px;
 				display    : block;
 				width      : 80px;
 				height     : 18px;
@@ -486,11 +452,11 @@ body {
 	}
 
 	.crossed {
-		position    : absolute;
-		color       : #000;
-		font-size   : 14px;
-		font-weight : bold;
-		text-shadow : 1px 0 0 rgb(0,0,0);
+		background : image-url('text.png') no-repeat right bottom;
+		display    : block;
+		width      : 15px;
+		height     : 14px;
+		position   : absolute;
 	}
 
 	.main-image {
@@ -538,17 +504,57 @@ body {
 	z-index    : 5;
 
 	&:before {
-		content        : '';
-		margin-left    : -960px;
-		position       : absolute;
-		top            : -356px;
-		left           : 50%;
-		border-top     : 219px solid transparent;
-		border-right   : 960px solid #1f998d;
-		border-bottom  : 219px solid #1f998d;
-		border-left    : 960px solid transparent;
-		pointer-events : none;
-		z-index        : -1;
+		content       : '';
+		margin-left   : -960px;
+		position      : absolute;
+		top           : -356px;
+		left          : 50%;
+		border-top    : 219px solid transparent;
+		border-right  : 960px solid #1f998d;
+		border-bottom : 219px solid #1f998d;
+		border-left   : 960px solid transparent;
+		z-index       : -1;
+	}
+
+	.btn-wrap {
+		margin   : 0 auto;
+		width    : 1200px;
+		position : relative;
+
+		.btn-link {
+			background : #59ffc2;
+			display    : block;
+			width      : 192px;
+			height     : 38px;
+			position   : absolute;
+			top        : -242px;
+			left       : 565px;
+			border     : 2px solid #000;
+
+			&:before {
+				content    : '';
+				margin     : -9px 0 0 -40px;
+				background : image-url('btn.png') no-repeat 0 -45px;
+				display    : block;
+				width      : 80px;
+				height     : 18px;
+				position   : absolute;
+				top        : 50%;
+				left       : 50%;
+			}
+
+			&:after {
+				content       : '';
+				margin-top    : -9px;
+				display       : block;
+				position      : absolute;
+				top           : 50%;
+				right         : 35px;
+				border-top    : 9px solid transparent;
+				border-bottom : 9px solid transparent;
+				border-left   : 15px solid #fd005f;
+			}
+		}
 	}
 
 	.footer-link {
