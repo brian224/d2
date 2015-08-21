@@ -1,10 +1,11 @@
-@import "compass/reset";
+﻿@import "compass/reset";
 @import "compass";
 /*@import "index-content";*/
 
 body {
 	background : #80cac3;
 	overflow-x : hidden;
+	font       : 12px/1.6em 'Century Gothic', sans-serif, serif, '黑體', 'Heiti TC', '微軟正黑體';
 }
 
 .both {
@@ -132,12 +133,20 @@ body {
 					left       : 0;
 				}
 
+				&:hover:after, &.is-curr:after {
+					background-position : -80px 0;
+				}
+
 				&.activity {
 					width : 128px;
 
 					&:after {
 						background-position : 0 -19px;
 						width               : 80px;
+					}
+
+					&:hover:after, &.is-curr:after {
+						background-position : -80px -19px;
 					}
 				}
 
@@ -148,6 +157,10 @@ body {
 						background-position : 0 -38px;
 						width               : 80px;
 					}
+
+					&:hover:after, &.is-curr:after {
+						background-position : -80px -38px;
+					}
 				}
 
 				&.winners {
@@ -157,6 +170,10 @@ body {
 						background-position : 0 -57px;
 						width               : 80px;
 					}
+
+					&:hover:after, &.is-curr:after {
+						background-position : -80px -57px;
+					}
 				}
 
 				&.join {
@@ -165,6 +182,10 @@ body {
 					&:after {
 						background-position : 0 -76px;
 						width               : 80px;
+					}
+
+					&:hover:after, &.is-curr:after {
+						background-position : -80px -76px;
 					}
 				}
 
@@ -176,6 +197,10 @@ body {
 						background-position : 0 -95px;
 						width               : 24px;
 						height              : 24px;
+					}
+
+					&:hover:after, &.is-curr:after {
+						background-position : -80px -95px;
 					}
 				}
 			}
@@ -443,8 +468,8 @@ body {
 		.reward-image {
 			background : image-url('reward-img.png') no-repeat 0 0;
 			display    : block;
-			width      : 374px;
-			height     : 557px;
+			width      : 358px;
+			height     : 541px;
 			position   : absolute;
 			top        : 33px;
 			left       : 113px;
@@ -463,10 +488,10 @@ body {
 		margin-left : -5px;
 		background  : image-url('main-img.png') no-repeat left 0;
 		display     : block;
-		width       : 373px;
-		height      : 639px;
+		width       : 360px;
+		height      : 556px;
 		position    : fixed;
-		top         : 142px;
+		top         : 203px;
 		left        : 50%;
 		z-index     : 2;
 	}
@@ -476,9 +501,9 @@ body {
 		background  : image-url('main-img.png') no-repeat right 0;
 		display     : block;
 		width       : 182px;
-		height      : 639px;
+		height      : 556px;
 		position    : fixed;
-		top         : 142px;
+		top         : 203px;
 		left        : 50%;
 		z-index     : 1;
 	}
@@ -609,6 +634,170 @@ body {
 			display : block;
 			width   : 100%;
 			height  : 100%;
+		}
+	}
+}
+
+/* vote-page*/
+body.vote-page {
+	.midWrap {
+		.content-Wrap {
+			z-index : 1;
+		}
+
+		.mainContent {
+			margin-bottom : 48px;
+			height        : auto;
+			position      : relative;
+
+			&:before {
+				content    : '';
+				background : #1f998d;
+				display    : block;
+				width      : 100%;
+				height     : 318px;
+				position   : absolute;
+				top        : 726px;
+				left       : 0;
+			}
+
+			&:after {
+				content       : '';
+				display       : block;
+				position      : absolute;
+				top           : 1044px;
+				left          : 0;
+				border-top    : 219px solid #1f998d;
+				border-right  : 960px solid #1f998d;
+				border-bottom : 219px solid transparent;
+				border-left   : 960px solid transparent;
+			}
+
+			.sub-title {
+				margin-bottom : 220px;
+			}
+		}
+
+		.main-image, .sub-image {
+			position : absolute;
+			z-index  : -1;
+		}
+	}
+
+	.vedio-list .list {
+		margin     : 0 10px 24px 10px;
+		width      : 320px;
+		height     : 306px;
+		float      : left;
+		box-shadow : 5px 5px 5px rgba(0,0,0,0.24);
+		overflow   : hidden;
+
+		.vedio-link {
+			display  : block;
+			width    : 100%;
+			height   : 180px;
+			position : relative;
+			overflow : hidden;
+
+			&:before {
+				content       : '';
+				margin        : -27px 0 0 -38px;
+				background    : #e42b26; /* Old browsers */
+				background    : -moz-linear-gradient(top, #e42b26 0%, #c0171c 100%); /* FF3.6+ */
+				background    : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e42b26), color-stop(100%,#c0171c)); /* Chrome,Safari4+ */
+				background    : -webkit-linear-gradient(top, #e42b26 0%,#c0171c 100%); /* Chrome10+,Safari5.1+ */
+				background    : -o-linear-gradient(top, #e42b26 0%,#c0171c 100%); /* Opera 11.10+ */
+				background    : -ms-linear-gradient(top, #e42b26 0%,#c0171c 100%); /* IE10+ */
+				background    : linear-gradient(to bottom, #e42b26 0%,#c0171c 100%); /* W3C */
+				filter        : progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42b26', endColorstr='#c0171c',GradientType=0 ); /* IE6-9 */
+				display       : block;
+				width         : 77px;
+				height        : 54px;
+				position      : absolute;
+				top           : 50%;
+				left          : 50%;
+				border-radius : 10px;
+				z-index       : 1;
+			}
+
+			&:after {
+				content       : '';
+				margin        : -11px 0 0 -9px;
+				display       : block;
+				border-top    : 11px solid transparent;
+				border-bottom : 11px solid transparent;
+				border-left   : 21px solid #fff;
+				position      : absolute;
+				top           : 50%;
+				left          : 50%;
+				z-index       : 1;
+			}
+
+			img {
+				margin-top : -120px;
+				display    : block;
+				width      : 100%;
+				position   : absolute;
+				top        : 50%;
+				left       : 0;
+			}
+		}
+
+		.vedio-info {
+			@include box-sizing(border-box);
+			padding    : 13px 14px;
+			background : #fff;
+			height     : 74px;
+		}
+
+		.vedio-title {
+			overflow      : hidden;
+			color         : #000;
+			font-size     : 14px;
+			line-height   : 24px;
+			text-overflow : ellipsis;
+			white-space   : nowrap;
+		}
+
+		.author {
+			padding     : 0 0 0 26px;
+			display     : block;
+			position    : relative;
+			color       : #616161;
+			font-size   : 14px;
+			line-height : 24px;
+
+			&:before {
+				content    : '';
+				margin-top : -9px;
+				background : image-url('icon.png') no-repeat 0 0;
+				display    : block;
+				width      : 18px;
+				height     : 19px;
+				position   : absolute;
+				top        : 50%;
+				left       : 0;
+			}
+		}
+
+		.fb-content {
+			background : #d2f9f5;
+			height     : 51px;
+			border-top : 1px solid #a2e1db;
+			vertical-align: middle;
+
+			.fb-share-button {
+				display: inline-block;
+			}
+		}
+	}
+
+	.l-footer {
+		z-index : 0;
+
+		.footer-link:before {
+			border-top  : 41px solid #80cac3;
+			border-left : 180px solid #80cac3;
 		}
 	}
 }
