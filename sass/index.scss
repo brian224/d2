@@ -263,7 +263,7 @@ body {
 		}
 	}
 
-	.activity-time {
+	.subContent.activity-time {
 		background : $menu-bg-yellow;
 		height     : 596px;
 		position   : relative;
@@ -368,7 +368,7 @@ body {
 		}
 	}
 
-	.reward {
+	.subContent.reward {
 		@include box-sizing(border-box);
 		padding    : 24px 0;
 		background : #37eeab;
@@ -1107,17 +1107,133 @@ body.activity {
 		letter-spacing : 1px;
 		line-height    : 30px;
 
+		.sub-title {
+			background : image-url('act-text.png') no-repeat 0 0;
+			display    : block;
+			width      : 203px;
+			height     : 44px;
+		}
+
+		.rule-title {
+			margin     : 36px 0 9px 0;
+			background : $menu-bg-yellow image-url('act-text.png') no-repeat 0 -44px;
+			display    : block;
+			width      : 98px;
+			height     : 19px;
+			border     : 5px solid $menu-bg-yellow;
+
+			&.selection {
+				background-position : 0 -63px;
+			}
+
+			&.size {
+				background-position : 0 -82px;
+			}
+
+			&.copyright {
+				background-position : 0 -101px;
+				width               : 120px;
+			}
+
+			&.related {
+				background-position : 0 -120px;
+				width               : 120px;
+			}
+
+			&.need-to-know {
+				background-position : 0 -139px;
+			}
+		}
+
+		.main-desc {
+			color       : #000;
+			font-weight : bold;
+		}
+
+		.theme-sec {
+			color : #000;
+
+			.theme-info {
+				margin       : 36px 0;
+				padding-left : 125px;
+				position     : relative;
+
+				&:before {
+					content       : '';
+					margin-top    : -51px;
+					background    : #edfffd;
+					display       : block;
+					width         : 102px;
+					height        : 102px;
+					position      : absolute;
+					top           : 50%;
+					left          : 0;
+					border-radius : 51px;
+				}
+
+				&.date {
+					width       : 400px;
+					font-size   : 22px;
+					font-weight : bold;
+					line-height : 36px;
+				}
+
+				.info-title {
+					margin     : 8px 16px 9px 0;
+					background : image-url('act-text.png') no-repeat 0 0;
+					display    : inline-block;
+					width      : 98px;
+					height     : 19px;
+					float      : left;
+
+					&.post-time {
+						background-position : 0 -158px;
+					}
+
+					&.vote-time {
+						background-position : 0 -177px;
+					}
+
+					&.promulgate-time {
+						background-position : 0 -196px;
+					}
+				}
+
+				.info {
+					display : inline-block;
+					float   : left;
+				}
+			}
+		}
+
+		.desc {
+			background : none;
+		}
+
 		.order-list {
 			padding-left : 26px;
 			list-style   : outside decimal;
 		}
 
-		.unorder-list {
-			padding-left : 26px;
-			position: relative;
+		.unorder-list .list {
+			padding-left : 111px;
+			position     : relative;
 
 			&:before {
-				content: '';
+				content    : '';
+				background : $footer-green;
+				display    : block;
+				width      : 9px;
+				height     : 9px;
+				position   : absolute;
+				top        : 10px;
+				left       : 0;
+			}
+
+			.key {
+				position : absolute;
+				top      : 0;
+				left     : 26px;
 			}
 		}
 	}
