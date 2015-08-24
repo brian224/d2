@@ -769,7 +769,7 @@ body.vote-page {
 		}
 	}
 
-	.vedio-list .list {
+	.video-list .list {
 		margin     : 0 10px 24px 10px;
 		width      : 320px;
 		height     : 306px;
@@ -777,7 +777,7 @@ body.vote-page {
 		box-shadow : 5px 5px 5px rgba(0,0,0,0.24);
 		overflow   : hidden;
 
-		.vedio-link {
+		.video-link {
 			display  : block;
 			width    : 100%;
 			height   : 180px;
@@ -832,14 +832,14 @@ body.vote-page {
 			}
 		}
 
-		.vedio-info {
+		.video-info {
 			@include box-sizing(border-box);
 			padding    : 13px 14px;
 			background : #fff;
 			height     : 74px;
 		}
 
-		.vedio-title {
+		.video-title {
 			overflow      : hidden;
 			color         : #000;
 			font-size     : 14px;
@@ -918,36 +918,19 @@ body.vote-page {
 		}
 	}
 
-	.lightbox-Wrap {
-		background : rgba(0,0,0,0.5);
-		display    : none;
-		width      : 100%;
-		height     : 100%;
-		position   : fixed;
-		top        : 0;
-		left       : 0;
-		z-index    : 7;
+	.fancybox-wrap {
+		@include box-sizing(border-box);
+		padding : 20px 38px;
 
-		&.is-show {
-			display : block;
-		}
-
-		.lightbox {
-			@include box-sizing(border-box);
-			margin     : 0 0 0 -410px;
-			padding    : 20px 38px;
-			background : #d8eeec;
-			width      : 820px;
-			position   : absolute;
-			top        : 50px;
-			left       : 50%;
+		.fancybox-skin {
+			box-shadow : none;
 
 			&:before, &:after {
 				content    : '';
-				margin     : 0 0 0 -417px;
+				margin     : 0 0 0 -407px;
 				background : rgba(31,153,141,0.67);
 				display    : block;
-				width      : 834px;
+				width      : 814px;
 				height     : 100%;
 				position   : absolute;
 				top        : -7px;
@@ -960,124 +943,131 @@ body.vote-page {
 				top    : auto;
 				bottom : -7px;
 			}
+		}
+	}
+}
 
-			.vedio-title {
-				margin-right   : 16px;
-				display        : block;
-				overflow       : hidden;
-				color          : #00645b;
-				font-size      : 30px;
-				letter-spacing : 1px;
-				line-height    : 1.6em;
-				text-overflow  : ellipsis;
-				white-space    : nowrap;
-			}
+.box-content {
+	@include box-sizing(border-box);
+	padding    : 20px 38px;
+	background : #d8eeec;
+	width      : 820px;
 
-			.author {
-				margin      : 14px 0;
-				padding     : 5px 0 5px 50px;
-				display     : block;
-				position    : relative;
-				color       : #616161;
-				font-size   : 18px;
-				line-height : 24px;
+	.video-title {
+		margin-right   : 36px;
+		display        : block;
+		overflow       : hidden;
+		color          : #00645b;
+		font-size      : 30px;
+		letter-spacing : 1px;
+		line-height    : 1.6em;
+		text-overflow  : ellipsis;
+		white-space    : nowrap;
+	}
+
+	.author {
+		margin      : 14px 0;
+		padding     : 5px 0 5px 50px;
+		display     : block;
+		position    : relative;
+		color       : #616161;
+		font-size   : 18px;
+		line-height : 24px;
+
+		&:before {
+			content       : '';
+			margin-top    : -17px;
+			background    : $footer-green;
+			display       : block;
+			width         : 34px;
+			height        : 34px;
+			position      : absolute;
+			top           : 50%;
+			left          : 0;
+			border-radius : 17px;
+		}
+
+		&:after {
+			content    : '';
+			margin     : -11px 0 0 7px;
+			background : image-url('icons.png') no-repeat 0 -59px;
+			display    : block;
+			width      : 20px;
+			height     : 21px;
+			position   : absolute;
+			top        : 50%;
+			left       : 0;
+		}
+	}
+
+	.video-frame {
+		margin-bottom : 28px;
+		display       : block;
+	}
+
+	.video-info {
+		@include box-sizing(border-box);
+		padding-top : 19px;
+		position    : relative;
+		border-top  : 1px solid $border-green;
+
+		.desc {
+			width       : 580px;
+			color       : #000;
+			font-size   : 14px;
+			line-height : 24px;
+		}
+
+		.fb-content {
+			width    : 156px;
+			position : absolute;
+			bottom   : 0;
+			right    : 0;
+
+			.like-count {
+				padding-left : 28px;
+				height       : 100%;
+				position     : relative;
+				color        : #000;
+				font-size    : 14px;
+				line-height  : 25px;
 
 				&:before {
-					content       : '';
-					margin-top    : -17px;
-					background    : $footer-green;
-					display       : block;
-					width         : 34px;
-					height        : 34px;
-					position      : absolute;
-					top           : 50%;
-					left          : 0;
-					border-radius : 17px;
-				}
-
-				&:after {
 					content    : '';
-					margin     : -11px 0 0 7px;
-					background : image-url('icons.png') no-repeat 0 -59px;
+					margin-top : -15px;
+					background : image-url('btn-fb.png') no-repeat 0 0;
 					display    : block;
-					width      : 20px;
-					height     : 21px;
+					width      : 23px;
+					height     : 22px;
 					position   : absolute;
 					top        : 50%;
 					left       : 0;
 				}
 			}
 
-			.vedio-frame {
-				margin-bottom : 28px;
-				display       : block;
-			}
-
-			.vedio-info {
-				@include box-sizing(border-box);
-				padding-top : 19px;
-				position    : relative;
-				border-top  : 1px solid $border-green;
-
-				.desc {
-					width       : 580px;
-					color       : #000;
-					font-size   : 14px;
-					line-height : 24px;
-				}
-
-				.fb-content {
-					width    : 156px;
-					position : absolute;
-					bottom   : 0;
-					right    : 0;
-
-					.like-count {
-						padding-left : 28px;
-						height       : 100%;
-						position     : relative;
-						color        : #000;
-						font-size    : 14px;
-						line-height  : 25px;
-
-						&:before {
-							content    : '';
-							margin-top : -15px;
-							background : image-url('btn-fb.png') no-repeat 0 0;
-							display    : block;
-							width      : 23px;
-							height     : 22px;
-							position   : absolute;
-							top        : 50%;
-							left       : 0;
-						}
-					}
-
-					.fb-share-button {
-						background : image-url('btn-fb.png') no-repeat -23px 0;
-						display    : inline-block;
-						width      : 57px;
-						height     : 25px;
-						float      : right;
-						border     : 0;
-						cursor     : pointer;
-					}
-				}
-			}
-
-			.btn-close {
-				padding    : 0;
-				background : image-url('icons.png') no-repeat 0 -19px;
-				display    : block;
-				width      : 41px;
-				height     : 40px;
-				position   : absolute;
-				top        : 19px;
-				right      : 16px;
+			.fb-share-button {
+				background : image-url('btn-fb.png') no-repeat -23px 0;
+				display    : inline-block;
+				width      : 57px;
+				height     : 25px;
+				float      : right;
 				border     : 0;
 				cursor     : pointer;
 			}
 		}
+	}
+
+	.btn-close {
+		padding    : 0;
+		background : image-url('icons.png') no-repeat 0 -19px;
+		display    : block;
+		width      : 41px;
+		height     : 40px;
+		position   : absolute;
+		top        : 19px;
+		right      : 16px;
+		border     : 0;
+		cursor     : pointer;
 	}
 }
 
@@ -1108,6 +1098,7 @@ body.activity {
 		line-height    : 30px;
 
 		.sub-title {
+			margin     : 0 0 9px 0;
 			background : image-url('act-text.png') no-repeat 0 0;
 			display    : block;
 			width      : 203px;
@@ -1171,11 +1162,75 @@ body.activity {
 					border-radius : 51px;
 				}
 
+				&:after {
+					content    : '';
+					background : image-url('icon-theme.png') no-repeat 0 0;
+					display    : block;
+					position   : absolute;
+					top        : 50%;
+					left       : 0;
+				}
+
 				&.date {
 					width       : 400px;
 					font-size   : 22px;
 					font-weight : bold;
 					line-height : 36px;
+
+					&:after {
+						margin : -25px 0 0 26px;
+						width  : 50px;
+						height : 50px;
+					}
+				}
+
+				&.video {
+					&:after {
+						margin              : -20px 0 0 23px;
+						background-position : 0 -50px;
+						width               : 58px;
+						height              : 39px;
+					}
+
+					.join {
+						background-position : 0 -215px;
+						width               : 205px;
+					}
+
+					.type {
+						background-position : 0 -234px;
+						width               : 98px;
+						clear               : both;
+					}
+
+					.set {
+						background-position : 0 -253px;
+						width               : 98px;
+						clear               : both;
+					}
+				}
+
+				&.reward {
+					padding-left : 239px;
+
+					&:after {
+						margin              : -27px 0 0 27px;
+						background-position : 0 -89px;
+						width               : 47px;
+						height              : 53px;
+					}
+
+					.info-title {
+						margin-top          : -10px;
+						background-position : 0 -272px;
+						position            : absolute;
+						top                 : 50%;
+						left                : 125px;
+					}
+
+					.info {
+						font-weight : bold;
+					}
 				}
 
 				.info-title {
@@ -1200,8 +1255,9 @@ body.activity {
 				}
 
 				.info {
-					display : inline-block;
-					float   : left;
+					display     : inline-block;
+					float       : left;
+					line-height : 36px;
 				}
 			}
 		}
@@ -1251,5 +1307,48 @@ body.activity {
 			border-right  : 29px solid $footer-green;
 			border-bottom : 36px solid $footer-green;
 		}
+	}
+
+	body.vote-page {
+		.video-list .list {
+			position : relative;
+			overflow : visible;
+
+			&:before {
+				content    : '';
+				background : image-url('ie8/box-shadow.png') no-repeat 0 0;
+				display    : block;
+				width      : 328px;
+				height     : 314px;
+				position   : absolute;
+				top        : 0;
+				left       : -1px;
+				z-index    : -1;
+			}
+
+			.video-link:before {
+				background : image-url('ie8/video-cursor.png') no-repeat 0 0;
+			}
+
+			.video-link:hover:before {
+				background-position : 0 -54px;
+			}
+		}
+
+		.fancybox-skin {
+			&:before, &:after {
+				background : image-url('ie8/green-op67.png');
+			}
+		}
+	}
+
+	.box-content .author:before {
+		background : image-url('ie8/circle-green.png');
+	}
+
+	body.activity .subContent .content-Wrap .theme-sec .theme-info:before {
+		background : image-url('ie8/circle-white.png');
+		width      : 103px;
+		height     : 103px;
 	}
 }
