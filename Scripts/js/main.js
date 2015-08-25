@@ -11,13 +11,11 @@ $(document).ready(function(){
 		for ( var i = 0 ; i < $videoLink.length ; i ++ ) {
 			if ( $videoLink.eq(i).data('id') === _id.split('#')[1] ) {
 				$.fancybox.open({
-					type : 'iframe',
-					iframe : {
-						preload : true
-					},
-					padding : 0,
-					href : $videoLink.eq(i).attr('href'),
-					autoSize : true,
+					closeBtn   : false,
+					type       : 'iframe',
+					padding    : 7,
+					width      : 820,
+					href       : $videoLink.eq(i).attr('href'),
 					afterClose : function() {
 						window.location.hash = '';
 					}
@@ -33,13 +31,11 @@ $(document).ready(function(){
 		window.location.hash = $this.data('id');
 
 		$.fancybox.open({
-			type : 'iframe',
-			iframe : {
-				preload : true
-			},
-			padding : 0,
-			href : $this.attr('href'),
-			autoSize : true,
+			closeBtn   : false,
+			type       : 'iframe',
+			padding    : 7,
+			width      : 820,
+			href       : $this.attr('href'),
 			afterClose : function() {
 				window.location.hash = '';
 			}
@@ -52,4 +48,26 @@ $(document).ready(function(){
 			$(this).siblings().removeClass('is-curr');
 		}
 	});
+
+	if (navigator.userAgent.search('MSIE 8') !== -1 || navigator.userAgent.search('MSIE 9') !== -1) {
+		if ($('body').hasClass('join')) {
+			var $inputbox = $('.inputbox, .textarea');
+
+			$inputbox.each(function(){
+				$(this).val($(this).attr('placeholder'));
+
+				$(this).on('click', function(){
+					if ($(this).val() === $(this).attr('placeholder')) {
+						$(this).val('');
+					}
+				});
+
+				$(this).on('focusout', function(){
+					if ($(this).val() === '') {
+						$(this).val($(this).attr('placeholder'));
+					}
+				});
+			});
+		}
+	}
 });

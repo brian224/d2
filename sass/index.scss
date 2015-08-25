@@ -15,6 +15,10 @@ body {
 	font       : 12px/1.6em 'Century Gothic', sans-serif, serif, '黑體', 'Heiti TC', '微軟正黑體';
 }
 
+input, textarea {
+	font-family : 'Century Gothic', sans-serif, serif, '黑體', 'Heiti TC', '微軟正黑體';
+}
+
 .both {
 	height   : 100%;
 	clear    : both;
@@ -898,14 +902,15 @@ body.vote-page {
 				}
 			}
 
-			.fb-share-button {
-				background : image-url('btn-fb.png') no-repeat -23px 0;
-				display    : inline-block;
-				width      : 57px;
-				height     : 25px;
-				float      : right;
-				border     : 0;
-				cursor     : pointer;
+			.fb-share {
+				text-indent : -99999px;
+				background  : image-url('btn-fb.png') no-repeat -23px 0;
+				display     : inline-block;
+				width       : 57px;
+				height      : 25px;
+				float       : right;
+				border      : 0;
+				cursor      : pointer;
 			}
 		}
 	}
@@ -920,11 +925,12 @@ body.vote-page {
 	}
 
 	.fancybox-wrap {
-		@include box-sizing(border-box);
-		padding : 20px 38px;
+		/*@include box-sizing(border-box);
+		padding : 20px 38px;*/
 
 		.fancybox-skin {
-			box-shadow : none;
+			background : rgba(31 , 153 , 141 , 0.6) !important;
+			/*box-shadow : none;
 
 			&:before, &:after {
 				content    : '';
@@ -943,7 +949,7 @@ body.vote-page {
 				height : 14px;
 				top    : auto;
 				bottom : -7px;
-			}
+			}*/
 		}
 	}
 }
@@ -1478,7 +1484,7 @@ body.join {
 			background : $light-bg-green;
 			display    : block;
 			width      : 100%;
-			height     : 318px;
+			height     : 338px;
 			position   : absolute;
 			top        : 919px;
 			left       : 0;
@@ -1487,7 +1493,7 @@ body.join {
 
 		.content-Wrap {
 			@include box-sizing(border-box);
-			padding        : 72px 79px 42px 51px;
+			padding        : 72px 79px 62px 51px;
 			background     : $main-bg-green;
 			width          : 1072px;
 			position       : relative;
@@ -1532,6 +1538,7 @@ body.join {
 					border      : 3px solid #000;
 					color       : #a6a6a6;
 					font-size   : 20px;
+					line-height : 36px;
 					text-indent : 12px;
 				}
 
@@ -1658,6 +1665,171 @@ body.join {
 
 	.l-footer {
 		z-index : 0;
+	}
+}
+
+/* mobile */
+body.mobile {
+	.mainContent {
+		padding    : 24px 0 0 16px;
+		background : $main-bg-green;
+		height     : 171px;
+
+		.main-title {
+			margin          : 0 0 6px 0;
+			background      : image-url('mobile-text.png') no-repeat 0 0;
+			background-size : 203px;
+			display         : block;
+			width           : 203px;
+			height          : 71px;
+		}
+
+		.sub-title {
+			background      : image-url('mobile-text.png') no-repeat 0 -71px;
+			background-size : 203px;
+			display         : block;
+			width           : 168px;
+			height          : 19px;
+		}
+	}
+
+	.subContent {
+		padding    : 7px 18px 0 17px;
+		background : $menu-bg-yellow;
+		position: relative;
+
+		&:before {
+			content       : '';
+			display       : block;
+			position      : absolute;
+			top           : -108px;
+			left          : 0;
+			border-top    : 54px solid transparent;
+			border-right  : 320px solid $menu-bg-yellow;
+			border-bottom : 54px solid $menu-bg-yellow;
+			border-left   : 320px solid transparent;
+		}
+
+		.sub-title {
+			margin-bottom   : 12px;
+			background      : image-url('mobile-text.png') no-repeat 0 -90px;
+			background-size : 203px;
+			display         : block;
+			width           : 83px;
+			height          : 18px;
+		}
+
+		.lab {
+			margin   : 0 0 12px 0;
+			padding  : 0 0 0 62px;
+			display  : block;
+			position : relative;
+
+			.key-type {
+				background      : image-url('mobile-text.png') no-repeat 0 -108px;
+				background-size : 203px;
+				display         : block;
+				width           : 50px;
+				height          : 11px;
+				position        : absolute;
+				top             : 3px;
+				left            : 0;
+			}
+
+			.inputbox {
+				@include box-sizing(border-box);
+				padding     : 0;
+				background  : #edfffd;
+				width       : 112px;
+				height      : 18px;
+				border      : 1.5px solid #000;
+				font-size   : 12px;
+				line-height : 18px;
+				text-indent : 6px;
+			}
+
+			&.phone-number .key-type {
+				background-position : 0 -119px;
+			}
+
+			&.theme {
+				.key-type {
+					background-position : 0 -130px;
+					height              : 10px;
+				}
+
+				.inputbox {
+					width : 100%;
+				}
+			}
+
+			&.video-url {
+				.key-type {
+					background-position : 0 -140px;
+				}
+
+				.inputbox {
+					width : 100%;
+				}
+			}
+
+			&.concept .key-type {
+				background-position : 0 -151px;
+				height              : 12px;
+			}
+		}
+	}
+
+	.btn-wrap {
+		text-align : right;
+
+		.btn-submit {
+			background: $light-bg-green;
+			display  : inline-block;
+			width    : 111px;
+			height   : 24px;
+			position : relative;
+			border   : 1.5px solid #000;
+
+			&:before {
+				content         : '';
+				margin          : -6.5px 0 0 -28px;
+				background      : image-url('mobile-text.png') no-repeat 0 -163px;
+				background-size : 203px;
+				display         : block;
+				width           : 56px;
+				height          : 13px;
+				position        : absolute;
+				top             : 50%;
+				left            : 50%;
+			}
+
+			&:after {
+				content       : '';
+				margin-top    : -5px;
+				display       : block;
+				position      : absolute;
+				top           : 50%;
+				right         : 16px;
+				border-top    : 5px solid transparent;
+				border-bottom : 5px solid transparent;
+				border-left   : 8px solid #ee376f;
+			}
+		}
+	}
+
+	.main-image {
+		margin          : 0;
+		background      : image-url('mobile-text.png') no-repeat right bottom;
+		background-size : 203px;
+		display         : block;
+		width           : 124px;
+		height          : 145px;
+		position        : absolute;
+		top             : 56px;
+		left            : auto;
+		right           : 4px;
+		z-index         : 2;
 	}
 }
 
