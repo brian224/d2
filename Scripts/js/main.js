@@ -70,6 +70,10 @@ $(document).ready(function(){
 		}
 	});
 
+	if ($('body').hasClass('join')) {
+		$('#join-form').validate();
+	}
+
 	if (navigator.userAgent.search('MSIE 8') !== -1 || navigator.userAgent.search('MSIE 9') !== -1) {
 		if ($('body').hasClass('join')) {
 			var $inputbox = $('.inputbox, .textarea');

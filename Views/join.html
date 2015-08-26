@@ -50,28 +50,31 @@
 		<section class="subContent">
 			<div class="content-Wrap">
 				<h3 class="sub-title hide-text">我要參加</h3>
-				<label class="lab both name">
-					<em class="key-type hide-text">作者姓名</em>
-					<input class="inputbox" type="text" placeholder="請輸入姓名">
-				</label>
-				<label class="lab both phone-number">
-					<em class="key-type hide-text">聯絡電話</em>
-					<input class="inputbox" type="tel" placeholder="請輸入聯絡電話" maxlength="10">
-				</label>
-				<label class="lab both theme">
-					<em class="key-type hide-text">主題</em>
-					<input class="inputbox" type="text" placeholder="請輸入20字內影片主題名稱" maxlength="20">
-				</label>
-				<label class="lab both video-url">
-					<em class="key-type hide-text">影片連結</em>
-					<input class="inputbox" type="url" placeholder="請貼上Youtube影片連結">
-				</label>
-				<label class="lab both concept">
-					<em class="key-type hide-text">創意概念</em>
-					<textarea class="textarea" maxlength="200" placeholder="請輸入200字內之創意概念說明"></textarea>
-				</label>
+				<form id="join-form">
+					<label class="lab both name">
+						<em class="key-type hide-text">作者姓名</em>
+						<input class="inputbox" type="text" placeholder="請輸入姓名" required>
+					</label>
+					<label class="lab both phone-number">
+						<em class="key-type hide-text">聯絡電話</em>
+						<input class="inputbox" type="tel" placeholder="請輸入聯絡電話" maxlength="10" required>
+					</label>
+					<label class="lab both theme">
+						<em class="key-type hide-text">主題</em>
+						<input class="inputbox" type="text" placeholder="請輸入20字內影片主題名稱" maxlength="20" required>
+					</label>
+					<label class="lab both video-url">
+						<em class="key-type hide-text">影片連結</em>
+						<input class="inputbox" type="url" placeholder="請貼上Youtube影片連結" required>
+					</label>
+					<label class="lab both concept">
+						<em class="key-type hide-text">創意概念</em>
+						<textarea class="textarea" maxlength="200" placeholder="請輸入200字內之創意概念說明" required></textarea>
+					</label>
+				</form>
 				<div class="btn-wrap">
 					<a class="btn-submit hide-text both" href="javascript:;">確認送出</a>
+					<!-- <input class="btn-submit hide-text both" type="submit" value="確認送出"> -->
 				</div>
 				<em class="emphasize">注意事項</em>
 				<ul class="notice">
@@ -94,6 +97,6 @@
 </body>
 <script type="text/javascript" src="../Scripts/plugin/jquery/jquery.min.js?JS=20150824_01"></script>
 <script type="text/javascript" src="../Scripts/plugin/jquery.fancybox/js/jquery.fancybox.pack.js?JS=20150824_01"></script>
-<script type="text/javascript" src="../Scripts/plugin/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../Scripts/plugin/jquery.validate/jquery.validate.js"></script>
 <script type="text/javascript" src="../Scripts/js/main.js?JS=20150824_01"></script>
 </html>
