@@ -8,6 +8,7 @@ $menu-bg-yellow : #ddd12d;
 $light-bg-green : #37eeab;
 $footer-green   : #1f998d;
 $border-green   : #a2e1db;
+$font-green     : #075e55;
 
 body {
 	background : $main-bg-green;
@@ -231,7 +232,7 @@ input, textarea {
 	}
 
 	.main-title, .sub-title, .desc, .emphasize {
-		background : image-url('text.png') no-repeat 0 0;
+		background : image-url('index-text.png') no-repeat 0 0;
 		display    : block;
 	}
 
@@ -488,7 +489,7 @@ input, textarea {
 	}
 
 	.crossed {
-		background : image-url('text.png') no-repeat right bottom;
+		background : image-url('index-text.png') no-repeat right bottom;
 		display    : block;
 		width      : 15px;
 		height     : 14px;
@@ -496,27 +497,27 @@ input, textarea {
 	}
 
 	.main-image {
-		margin-left : -5px;
-		background  : image-url('main-img.png') no-repeat left 0;
-		display     : block;
-		width       : 360px;
-		height      : 556px;
-		position    : fixed;
-		top         : 203px;
-		left        : 50%;
-		z-index     : 2;
-	}
-
-	.sub-image {
-		margin-left : 343px;
+		margin-left : 181px;
 		background  : image-url('main-img.png') no-repeat right 0;
 		display     : block;
-		width       : 182px;
-		height      : 556px;
+		width       : 349px;
+		height      : 429px;
 		position    : fixed;
 		top         : 203px;
 		left        : 50%;
 		z-index     : 1;
+	}
+
+	.sub-image {
+		margin-left : 7px;
+		background  : image-url('main-img.png') no-repeat left 0;
+		display     : block;
+		width       : 360px;
+		height      : 429px;
+		position    : fixed;
+		top         : 333px;
+		left        : 50%;
+		z-index     : 2;
 	}
 
 	.btn-slide-down {
@@ -647,6 +648,10 @@ input, textarea {
 			height  : 100%;
 		}
 	}
+}
+
+.fancybox-wrap .fancybox-skin {
+	background : rgba(31 , 153 , 141 , 0.6) !important;
 }
 
 /* vote-page */
@@ -923,35 +928,6 @@ body.vote-page {
 			border-left : 180px solid $main-bg-green;
 		}
 	}
-
-	.fancybox-wrap {
-		/*@include box-sizing(border-box);
-		padding : 20px 38px;*/
-
-		.fancybox-skin {
-			background : rgba(31 , 153 , 141 , 0.6) !important;
-			/*box-shadow : none;
-
-			&:before, &:after {
-				content    : '';
-				margin     : 0 0 0 -407px;
-				background : rgba(31,153,141,0.67);
-				display    : block;
-				width      : 814px;
-				height     : 100%;
-				position   : absolute;
-				top        : -7px;
-				left       : 50%;
-				z-index    : -1;
-			}
-
-			&:after {
-				height : 14px;
-				top    : auto;
-				bottom : -7px;
-			}*/
-		}
-	}
 }
 
 .box-content {
@@ -1076,6 +1052,40 @@ body.vote-page {
 		border     : 0;
 		cursor     : pointer;
 	}
+
+	&.winners {
+		padding    : 24px 68px 24px 26px;
+		background : #fff;
+		width      : 796px;
+
+		.box-title {
+			background : image-url('winners-text.png') no-repeat 0 0;
+			display    : block;
+			width      : 206px;
+			height     : 48px;
+		}
+
+		.winners-info {
+			margin-left : 36px;
+
+			.list {
+				height      : 56px;
+				color       : #444;
+				font-size   : 18px;
+				line-height : 56px;
+
+				&:nth-child(2n) {
+					background : #f2f2f2;
+				}
+
+				em, span {
+					display : block;
+					width   : 25%;
+					float   : left;
+				}
+			}
+		}
+	}
 }
 
 /* activity */
@@ -1173,7 +1183,7 @@ body.activity {
 			background     : $main-bg-green;
 			width          : 1072px;
 			border         : 6px solid $menu-bg-yellow;
-			color          : #075e55;
+			color          : $font-green;
 			font-size      : 16px;
 			letter-spacing : 1px;
 			line-height    : 30px;
@@ -1499,7 +1509,7 @@ body.join {
 			position       : relative;
 			border         : 6px solid $menu-bg-yellow;
 			z-index        : 1;
-			color          : #075e55;
+			color          : $font-green;
 			font-size      : 16px;
 			letter-spacing : 1px;
 			line-height    : 30px;
@@ -1631,7 +1641,7 @@ body.join {
 				background     : $menu-bg-yellow;
 				display        : inline-block;
 				height         : 26px;
-				color          : #075e55;
+				color          : $font-green;
 				font-size      : 16px;
 				letter-spacing : 1px;
 				line-height    : 26px;
@@ -1639,7 +1649,7 @@ body.join {
 
 			.notice {
 				margin-left    : 94px;
-				color          : #075e55;
+				color          : $font-green;
 				font-size      : 16px;
 				letter-spacing : 1px;
 				line-height    : 30px;
@@ -1694,7 +1704,7 @@ body.mobile {
 	}
 
 	.subContent {
-		padding    : 7px 18px 0 17px;
+		padding    : 7px 18px 25px 17px;
 		background : $menu-bg-yellow;
 		position: relative;
 
@@ -1773,15 +1783,58 @@ body.mobile {
 				}
 			}
 
-			&.concept .key-type {
-				background-position : 0 -151px;
-				height              : 12px;
+			&.concept {
+				.key-type {
+					background-position : 0 -151px;
+					height              : 12px;
+				}
+
+				.textarea {
+					@include box-sizing(border-box);
+					padding     : 0 6px;
+					background  : #edfffd;
+					width       : 100%;
+					height      : 125px;
+					border      : 1.5px solid #000;
+					font-size   : 12px;
+					line-height : 18px;
+				}
+			}
+		}
+
+		.emphasize {
+			padding        : 0 4px;
+			background     : $main-bg-green;
+			display        : inline-block;
+			height         : 16px;
+			color          : $font-green;
+			letter-spacing : 1px;
+			line-height    : 16px;
+		}
+
+		.notice .list {
+			margin-top   : 6px;
+			padding-left : 12px;
+			position     : relative;
+			color        : $font-green;
+			line-height  : 18px;
+
+			&:before {
+				content    : '';
+				background : $footer-green;
+				display    : block;
+				width      : 4.5px;
+				height     : 4.5px;
+				position   : absolute;
+				top        : 6px;
+				left       : 1px;
 			}
 		}
 	}
 
 	.btn-wrap {
-		text-align : right;
+		margin-bottom : 35px;
+		text-align    : right;
 
 		.btn-submit {
 			background: $light-bg-green;
@@ -1824,9 +1877,9 @@ body.mobile {
 		background-size : 203px;
 		display         : block;
 		width           : 124px;
-		height          : 145px;
+		height          : 132px;
 		position        : absolute;
-		top             : 56px;
+		top             : 76px;
 		left            : auto;
 		right           : 4px;
 		z-index         : 2;
@@ -1876,8 +1929,16 @@ body.mobile {
 		}
 	}
 
-	.box-content .author:before {
-		background : image-url('ie8/circle-green.png');
+	.box-content {
+		.author:before {
+			background : image-url('ie8/circle-green.png');
+		}
+
+		&.winners .winners-info {
+			li + li, li + li + li + li, li + li + li + li + li + li, li + li + li + li + li + li + li + li {
+				background : #f2f2f2;
+			}
+		}
 	}
 
 	body.activity .subContent .content-Wrap .theme-sec .theme-info:before {

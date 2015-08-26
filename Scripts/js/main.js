@@ -4,6 +4,7 @@ $(document).ready(function(){
 		$btnClose     = $('.btn-close'),
 		$btnSort      = $('.btn-sort'),
 		$lightboxWrap = $('.lightbox-Wrap'),
+		$winners      = $('.link.winners'),
 		_url          = window.location.href,
 		_id           = window.location.hash;
 
@@ -17,15 +18,34 @@ $(document).ready(function(){
 					width      : 820,
 					href       : $videoLink.eq(i).attr('href'),
 					afterClose : function() {
-						window.location.hash = '';
+						window.location.hash = ' ';
 					}
 				});
 			}
 		};
 	}
 
+	$winners.on('click' , function(e) {
+		var $this      = $(this),
+			$scrollTop = $(window).scrollTop();
+		
+		e.preventDefault();
+
+		$.fancybox.open({
+			closeBtn   : false,
+			type       : 'iframe',
+			padding    : 7,
+			width      : 796,
+			href       : $this.attr('href'),
+			afterClose : function() {
+				$('html , body').scrollTop($scrollTop);
+			}
+		});
+	});
+
 	$videoLink.on('click' , function(e) {
 		var $this = $(this);
+		var $scrollTop = $(window).scrollTop();
 		
 		e.preventDefault();
 		window.location.hash = $this.data('id');
@@ -37,7 +57,8 @@ $(document).ready(function(){
 			width      : 820,
 			href       : $this.attr('href'),
 			afterClose : function() {
-				window.location.hash = '';
+				window.location.hash = ' ';
+				$('html , body').scrollTop($scrollTop);
 			}
 		});
 	});
