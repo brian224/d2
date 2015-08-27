@@ -70,8 +70,31 @@ $(document).ready(function(){
 		}
 	});
 
-	if ($('body').hasClass('join')) {
-		$('#join-form').validate();
+	if ($('body').hasClass('index')) {
+	}
+
+	if ($('body').hasClass('join') || $('body').hasClass('mobile')) {
+		$('#join-form').validate({
+			messages: {
+				name: "請輸入作者姓名",
+				phoneNumber: {
+					required: "請輸入聯絡電話",
+					maxlength: "聯絡電話超過10字"
+				},
+				theme: {
+					required: "請輸入影片主題名稱",
+					maxlength: "主題超過20字"
+				},
+				videoUrl: {
+					required: "請貼上Youtube影片連結",
+					url: "請輸入正確的網址格式"
+				},
+				concept: {
+					required: "請輸入創意概念說明",
+					maxlength: "創意概念超過200字"
+				}
+			}
+		});
 	}
 
 	if (navigator.userAgent.search('MSIE 8') !== -1 || navigator.userAgent.search('MSIE 9') !== -1) {

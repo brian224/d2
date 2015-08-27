@@ -9,6 +9,8 @@ $light-bg-green : #37eeab;
 $footer-green   : #1f998d;
 $border-green   : #a2e1db;
 $font-green     : #075e55;
+$font-red       : #ee376f;
+$bg-white       : #edfffd;
 
 body {
 	background : $main-bg-green;
@@ -1243,7 +1245,7 @@ body.activity {
 					&:before {
 						content       : '';
 						margin-top    : -51px;
-						background    : #edfffd;
+						background    : $bg-white;
 						display       : block;
 						width         : 102px;
 						height        : 102px;
@@ -1541,10 +1543,9 @@ body.join {
 				.inputbox {
 					@include box-sizing(border-box);
 					padding     : 0;
-					background  : #edfffd;
+					background  : $bg-white;
 					width       : 270px;
 					height      : 42px;
-					float       : left;
 					border      : 3px solid #000;
 					color       : #a6a6a6;
 					font-size   : 20px;
@@ -1555,7 +1556,7 @@ body.join {
 				.textarea {
 					@include box-sizing(border-box);
 					padding     : 1px 12px;
-					background  : #edfffd;
+					background  : $bg-white;
 					width       : 100%;
 					height      : 320px;
 					border      : 3px solid #000;
@@ -1564,7 +1565,15 @@ body.join {
 					line-height : 36px;
 				}
 
-				&.phone-number .key-type {
+				label.error {
+					position    : absolute;
+					bottom      : -30px;
+					left        : 94px;
+					color       : $font-red;
+					font-weight : bold;
+				}
+
+				&.phoneNumber .key-type {
 						background-position : 0 -67px;
 				}
 
@@ -1578,7 +1587,7 @@ body.join {
 					}
 				}
 
-				&.video-url {
+				&.videoUrl {
 					.key-type {
 						background-position : 0 -105px;
 					}
@@ -1608,6 +1617,7 @@ body.join {
 					height     : 46px;
 					position   : relative;
 					border     : 2px solid #000;
+					cursor     : pointer;
 
 					&:before {
 						content    : '';
@@ -1630,7 +1640,7 @@ body.join {
 						right         : 42px;
 						border-top    : 10px solid transparent;
 						border-bottom : 10px solid transparent;
-						border-left   : 18px solid #ee376f;
+						border-left   : 18px solid $font-red;
 					}
 				}
 			}
@@ -1748,17 +1758,23 @@ body.mobile {
 
 			.inputbox {
 				@include box-sizing(border-box);
-				padding     : 0;
-				background  : #edfffd;
-				width       : 112px;
-				height      : 18px;
-				border      : 1.5px solid #000;
-				font-size   : 12px;
-				line-height : 18px;
-				text-indent : 6px;
+				margin-right : 10px;
+				padding      : 0;
+				background   : $bg-white;
+				width        : 112px;
+				height       : 18px;
+				border       : 1.5px solid #000;
+				font-size    : 12px;
+				line-height  : 18px;
+				text-indent  : 6px;
 			}
 
-			&.phone-number .key-type {
+			label.error {
+				color        : $font-red;
+				font-weight  : bold;
+			}
+
+			&.phoneNumber .key-type {
 				background-position : 0 -119px;
 			}
 
@@ -1769,17 +1785,19 @@ body.mobile {
 				}
 
 				.inputbox {
-					width : 100%;
+					margin-right : 0;
+					width        : 100%;
 				}
 			}
 
-			&.video-url {
+			&.videoUrl {
 				.key-type {
 					background-position : 0 -140px;
 				}
 
 				.inputbox {
-					width : 100%;
+					margin-right : 0;
+					width        : 100%;
 				}
 			}
 
@@ -1792,7 +1810,7 @@ body.mobile {
 				.textarea {
 					@include box-sizing(border-box);
 					padding     : 0 6px;
-					background  : #edfffd;
+					background  : $bg-white;
 					width       : 100%;
 					height      : 125px;
 					border      : 1.5px solid #000;
@@ -1866,7 +1884,7 @@ body.mobile {
 				right         : 16px;
 				border-top    : 5px solid transparent;
 				border-bottom : 5px solid transparent;
-				border-left   : 8px solid #ee376f;
+				border-left   : 8px solid $font-red;
 			}
 		}
 	}
@@ -1945,5 +1963,86 @@ body.mobile {
 		background : image-url('ie8/circle-white.png');
 		width      : 103px;
 		height     : 103px;
+	}
+}
+
+/* animation */
+body.index {
+	.main-image {
+		-webkit-animation : mainHide .5s linear forwards .1s;
+		-moz-animation    : mainHide .5s linear forwards .1s;
+		animation         : mainHide .5s linear forwards .1s;
+	}
+
+	.sub-image {
+		-webkit-animation : subHide .5s linear forwards .1s;
+		-moz-animation    : subHide .5s linear forwards .1s;
+		animation         : subHide .5s linear forwards .1s;
+	}
+}
+
+@-webkit-keyframes mainHide {
+	from {
+		top     : 303px;
+		opacity : 0;
+	}
+	to {
+		top     : 203px;
+		opacity : 1;
+	}
+}
+
+@-moz-keyframes mainHide {
+	from {
+		top     : 303px;
+		opacity : 0;
+	}
+	to {
+		top     : 203px;
+		opacity : 1;
+	}
+}
+
+@keyframes mainHide {
+	from {
+		top     : 303px;
+		opacity : 0;
+	}
+	to {
+		top     : 203px;
+		opacity : 1;
+	}
+}
+
+@-webkit-keyframes subHide {
+	from {
+		top     : 433px;
+		opacity : 0;
+	}
+	to {
+		top     : 333px;
+		opacity : 1;
+	}
+}
+
+@-moz-keyframes subHide {
+	from {
+		top     : 433px;
+		opacity : 0;
+	}
+	to {
+		top     : 333px;
+		opacity : 1;
+	}
+}
+
+@keyframes subHide {
+	from {
+		top     : 433px;
+		opacity : 0;
+	}
+	to {
+		top     : 333px;
+		opacity : 1;
 	}
 }
