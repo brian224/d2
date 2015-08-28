@@ -889,12 +889,13 @@ body.vote-page {
 			border-top : 1px solid $border-green;
 
 			.like-count {
-				padding-left : 28px;
-				height       : 100%;
-				position     : relative;
-				color        : #000;
-				font-size    : 14px;
-				line-height  : 25px;
+				padding-left    : 28px;
+				height          : 100%;
+				position        : relative;
+				color           : #000;
+				font-size       : 14px;
+				line-height     : 25px;
+				text-decoration : none;
 
 				&:before {
 					content    : '';
@@ -1030,7 +1031,7 @@ body.vote-page {
 				}
 			}
 
-			.fb-share-button {
+			.fb-share {
 				background : image-url('btn-fb.png') no-repeat -23px 0;
 				display    : inline-block;
 				width      : 57px;
@@ -1060,11 +1061,101 @@ body.vote-page {
 		background : #fff;
 		width      : 796px;
 
+		&.unpublished {
+			.unpublished-info {
+				display : block;
+			}
+
+			.winners-info {
+				display : none;
+			}
+		}
+
 		.box-title {
 			background : image-url('winners-text.png') no-repeat 0 0;
 			display    : block;
 			width      : 206px;
 			height     : 48px;
+		}
+
+		.unpublished-info {
+			margin     : 42px 0 0 0;
+			display    : none;
+			position   : relative;
+			text-align : center;
+
+			&:before {
+				content    : '';
+				margin     : 0 auto 30px auto;
+				background : image-url('winners-text.png') no-repeat 0 -48px;
+				display    : block;
+				width      : 344px;
+				height     : 131px;
+			}
+
+			.emphasize {
+				margin      : 0 0 14px 0;
+				display     : block;
+				color       : #4d4d4d;
+				font-size   : 30px;
+				line-height : 45px;
+			}
+
+			.desc {
+				display   : block;
+				color     : #4d4d4d;
+				font-size : 18px;
+			}
+
+			.btn-wrap {
+				margin : 40px 0 84px 0;
+			}
+
+			.btn-link {
+				margin      : 0 17px;
+				display     : inline-block;
+				width       : 150px;
+				height      : 40px;
+				position    : relative;
+				border      : 2px solid #000;
+				line-height : 40px;
+
+				&:before {
+					content    : '';
+					margin     : -10px 0 0 -52px;
+					background : image-url('winners-text.png') no-repeat right 0;
+					display    : block;
+					width      : 89px;
+					height     : 19px;
+					position   : absolute;
+					top        : 50%;
+					left       : 50%;
+				}
+
+				&:after {
+					content       : '';
+					margin-top    : -10px;
+					display       : block;
+					position      : absolute;
+					top           : 50%;
+					right         : 14px;
+					border-top    : 10px solid transparent;
+					border-bottom : 10px solid transparent;
+					border-left   : 18px solid #000;
+				}
+
+				&.link-join {
+					background : #f3eb6a;
+				}
+
+				&.link-vote {
+					background : #a0f0e8;
+
+					&:before {
+						background-position : right -19px;
+					}
+				}
+			}
 		}
 
 		.winners-info {
@@ -1963,86 +2054,5 @@ body.mobile {
 		background : image-url('ie8/circle-white.png');
 		width      : 103px;
 		height     : 103px;
-	}
-}
-
-/* animation */
-body.index {
-	.main-image {
-		-webkit-animation : mainHide .5s linear forwards .1s;
-		-moz-animation    : mainHide .5s linear forwards .1s;
-		animation         : mainHide .5s linear forwards .1s;
-	}
-
-	.sub-image {
-		-webkit-animation : subHide .5s linear forwards .1s;
-		-moz-animation    : subHide .5s linear forwards .1s;
-		animation         : subHide .5s linear forwards .1s;
-	}
-}
-
-@-webkit-keyframes mainHide {
-	from {
-		top     : 303px;
-		opacity : 0;
-	}
-	to {
-		top     : 203px;
-		opacity : 1;
-	}
-}
-
-@-moz-keyframes mainHide {
-	from {
-		top     : 303px;
-		opacity : 0;
-	}
-	to {
-		top     : 203px;
-		opacity : 1;
-	}
-}
-
-@keyframes mainHide {
-	from {
-		top     : 303px;
-		opacity : 0;
-	}
-	to {
-		top     : 203px;
-		opacity : 1;
-	}
-}
-
-@-webkit-keyframes subHide {
-	from {
-		top     : 433px;
-		opacity : 0;
-	}
-	to {
-		top     : 333px;
-		opacity : 1;
-	}
-}
-
-@-moz-keyframes subHide {
-	from {
-		top     : 433px;
-		opacity : 0;
-	}
-	to {
-		top     : 333px;
-		opacity : 1;
-	}
-}
-
-@keyframes subHide {
-	from {
-		top     : 433px;
-		opacity : 0;
-	}
-	to {
-		top     : 333px;
-		opacity : 1;
 	}
 }
