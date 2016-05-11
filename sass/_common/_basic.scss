@@ -1,0 +1,103 @@
+/* br */
+[class^="b-br-"] , [class*=" b-br-"] {
+    display : none !important;
+}
+
+/* cloak */
+.b-cloak {
+	display : none !important;
+}
+
+/* vertical-align middle */
+.b-middle {
+	font-size  : 0;
+	max-height : 100%;
+
+	&:before {
+		content : '';
+		height  : 100%;
+		@include inline-block;
+	}
+
+	> * {
+		font-size : initial;
+		zoom      : 1;
+		@include inline-block;
+	}
+}
+
+/* clearfix */
+.b-clearfix {
+	&:after {
+		content : '';
+		width   : 100%;
+		height  : 0;
+		clear   : both;
+		@include clearfix;
+		@include display(block);
+	}
+}
+
+@include respond-to(Desktops) {
+	.is-tm-show {
+		display : none !important;
+	}
+
+	/* br */
+    .b-br-md {
+        display : block !important;
+    }
+
+    /* hide */
+    .b-hide-md {
+		display : none !important;
+    }
+}
+
+@include respond-to(Desktops-Tablets) {
+	.m-btn {
+		font-size: 18px;
+	}
+
+	.dt-block {
+		display : block;
+	}
+}
+
+@include respond-to(Tablets-Mobiles) {
+	.tm-block {
+		display : block;
+	}
+}
+
+@include respond-to(Tablets) {
+	/* br */
+    .b-br-sm {
+        display : block !important;
+    }
+
+    /* hide */
+    .b-hide-sm {
+		display : none !important;
+    }
+}
+
+@include respond-to(Mobiles) {
+	.m-btn {
+		font-size: 15px;
+	}
+
+	.sm-block {
+		display : block;
+	}
+
+	/* br */
+    .b-br-xs {
+        display : block !important;
+    }
+
+    /* hide */
+    .b-hide-xs {
+		display : none !important;
+    }
+}

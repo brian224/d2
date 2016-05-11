@@ -1,0 +1,142 @@
+﻿@include respond-to(Desktops) {}
+
+@include respond-to(Desktops-Tablets) {
+	.bgimage-list {
+		height: 100%;
+		position: relative;
+		font-size: 0;
+
+		.list {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		.img-wrap {
+			margin-left: -1060px;
+			width: 2120px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			text-align: center;
+		}
+	}
+
+	.type-list {
+		width: 100%;
+		height: 100%;
+		line-height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		> .list {
+			height: 20%;
+			position: relative;
+			border-top: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+			@include box-sizing(border-box);
+
+			&:hover {
+				.price-title {
+					width: 261px;
+					left: 2px;
+				}
+
+				.price-title, .item-list .list .img-wrap {
+					@include opacity(1);
+				}
+			}
+		}
+
+		.price-title {
+			background: #000;
+			width: 0;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 130px;
+			right: 797px;
+			color: #fff;
+			text-align: center;
+			@include opacity(0);
+			@include transition(ease-in all 0.3s);
+
+			em {
+				font-size: 24px;
+			}
+		}
+
+		.item-list {
+			height: 100%;
+			font-size: 0;
+			white-space: nowrap;
+
+			> .list {
+				display: inline-block;
+				width: 265px;
+				height: 100%;
+				position: relative;
+				border-right: 2px solid #fff;
+				border-left: 2px solid #fff;
+				vertical-align: top;
+				text-align: center;
+				@include box-sizing(border-box);
+
+				&:hover .b-link {
+					@include opacity(1);
+				}
+
+				.img-wrap {
+					background: #fff;
+					display: block;
+					width: 100%;
+					height: 100%;
+					@include transition(ease-in all 0.3s);
+					@include opacity(0);
+				}
+
+				img {
+					height: 100%;
+					position: relative;
+					z-index: 1;
+				}
+
+				.b-link {
+					background: rgba(0, 0, 0, 0.5);
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 2;
+					color: #fff;
+					font-size: 18px;
+					@include opacity(0);
+					@include transition(ease-in all 0.3s);
+				}
+			}
+		}
+	}
+}
+
+@include respond-to(Tablets) {}
+
+@include respond-to(Tablets-Mobiles) {}
+
+@include respond-to(Mobiles) {}
+
+@-moz-document url-prefix() {}
+
+@include browsers('IE9') {}
+
+@include browsers('IE8') {}

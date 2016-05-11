@@ -1,0 +1,23 @@
+.l-main {
+	margin: 0 auto;
+	width: 1060px;
+	height: 800px;
+	position: relative;
+	overflow: hidden;
+}
+
+@include respond-to(Desktops) {}
+
+@include respond-to(Desktops-Tablets) {}
+
+@include respond-to(Tablets) {}
+
+@include respond-to(Tablets-Mobiles) {}
+
+@include respond-to(Mobiles) {}
+
+@include browsers('IE9') {}
+
+@include browsers('IE8') {}
+
+@include not-support('IE8') {}
