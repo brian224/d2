@@ -1,11 +1,15 @@
 (function (window, document, jQuery, undefined) {
 	'use strict';
 
-	// $('.jq-menu').on('click' , function(e){
-	// 	e.preventDefault();
-	// });
-
-	Projects.Factory.W.load(function(e){});
-	Projects.Factory.D.ready(function(e){});
-	Projects.Factory.W.resize(function(e){});
+	Projects.Factory.$W.load(function(e){
+		$('.jq-slider').each(function(e){
+			$(this).hover(function(e) {
+				Projects.Factory.Slideshow.Init(e, this);
+			}, function(){
+				window.clearInterval(Projects.Factory.Slideshow.goRight);
+				window.clearInterval(Projects.Factory.Slideshow.goLeft);
+			});
+		});
+	});
+	Projects.Factory.$D.ready(function(e){});
 }(window, document, $));
