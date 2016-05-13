@@ -2,6 +2,8 @@
 	'use strict';
 
 	Projects.Factory.$W.load(function(e){
+		Projects.Factory.Page();
+
 		$('.jq-slider').each(function(e){
 			$(this).hover(function(e) {
 				Projects.Factory.Slideshow.Init(e, this);

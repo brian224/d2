@@ -86,12 +86,31 @@
 			&:hover {
 				.price-title {
 					width: 261px;
-					left: 2px;
+					left: 0;
 				}
 
 				.price-title, .item-list .list .img-wrap {
 					@include opacity(1);
 				}
+			}
+		}
+
+		&.approach > .list {
+			@for $i from 2 through 5 {
+				&:nth-child(#{$i}) {
+					.price-title, .item-list .list .img-wrap {
+						@include animation-delay(0.2s * ($i - 1));
+					}
+				}
+			}
+
+			.price-title {
+				width: 261px;
+				left: 0;
+			}
+
+			.price-title, .item-list .list .img-wrap {
+				@include animation(flicker 1s ease-in-out forwards);
 			}
 		}
 
@@ -103,8 +122,12 @@
 			top: 0;
 			left: 130px;
 			right: 797px;
+			border-right: 2px solid #fff;
+			border-left: 2px solid #fff;
+			z-index: 3;
 			color: #fff;
 			text-align: center;
+			point-events: none;
 			@include opacity(0);
 			@include transition(ease-in all 0.3s);
 

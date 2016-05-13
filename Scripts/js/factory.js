@@ -17,6 +17,11 @@
 			_browsers  : null,
 			_Dynamic   : null,
 			_OS        : null,
+			Page       : function(){
+				$('.type-list').on('webkitAnimationEnd oAnimationend oAnimationEnd msAnimationEnd animationend', function(){
+					$(this).removeClass('approach');
+				});
+			},
 			Slideshow  : {
 				goRight : null,
 				goLeft : null,
@@ -25,8 +30,24 @@
 
 					if (event.pageX > _middle) {
 						Projects.Factory.Slideshow.Right(event, element);
+
+						$(element).on('mousemove', function(e){
+							if (e.pageX < _middle) {
+								window.clearInterval(Projects.Factory.Slideshow.goRight);
+								window.clearInterval(Projects.Factory.Slideshow.goLeft);
+								Projects.Factory.Slideshow.Left(event, element);
+							}
+						});
 					} else {
 						Projects.Factory.Slideshow.Left(event, element);
+
+						$(element).on('mousemove', function(e){
+							if (e.pageX > _middle) {
+								window.clearInterval(Projects.Factory.Slideshow.goRight);
+								window.clearInterval(Projects.Factory.Slideshow.goLeft);
+								Projects.Factory.Slideshow.Right(event, element);
+							}
+						});
 					}
 				},
 				Right : function(event, element){
@@ -39,7 +60,7 @@
 							window.clearInterval(Projects.Factory.Slideshow.goRight);
 							window.clearInterval(Projects.Factory.Slideshow.goLeft);
 						}
-					}, 50);
+					}, 25);
 				},
 				Left : function(event, element){
 					Projects.Factory.Slideshow.goLeft = setInterval(function(){
@@ -49,7 +70,7 @@
 							window.clearInterval(Projects.Factory.Slideshow.goRight);
 							window.clearInterval(Projects.Factory.Slideshow.goLeft);
 						}
-					}, 50);
+					}, 25);
 				}
 			}
 		}
