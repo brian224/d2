@@ -18,34 +18,38 @@
 			_Dynamic   : null,
 			_OS        : null,
 			Page       : function(){
-				$('.type-list').on('webkitAnimationEnd oAnimationend oAnimationEnd msAnimationEnd animationend', function(){
-					$(this).removeClass('approach');
-				});
+				var _time = (parseFloat($('.type-list.approach>.list:last-child .price-title').css('animation-delay') , 10) * 1000) + (parseFloat($('.type-list.approach>.list:last-child .price-title').css('animation-duration') , 10) * 1000);
+				
+				setTimeout(function(){
+					$('.approach').removeClass('approach');
+				}, _time);
 			},
 			Slideshow  : {
 				goRight : null,
 				goLeft : null,
 				Init : function(event, element){
-					var _middle = (Projects.Factory._WWid / 2); // 決定往左或往右的中間點
+					var $newElement = $(element).find('.item-list'),
+						_middle     = (Projects.Factory._WWid / 2), // 決定往左或往右的中間點
+						_event      = event;
 
-					if (event.pageX > _middle) {
-						Projects.Factory.Slideshow.Right(event, element);
+					if (_event.pageX > _middle) {
+						Projects.Factory.Slideshow.Right(_event, $newElement);
 
 						$(element).on('mousemove', function(e){
 							if (e.pageX < _middle) {
 								window.clearInterval(Projects.Factory.Slideshow.goRight);
 								window.clearInterval(Projects.Factory.Slideshow.goLeft);
-								Projects.Factory.Slideshow.Left(event, element);
+								Projects.Factory.Slideshow.Left(_event, $newElement);
 							}
 						});
 					} else {
-						Projects.Factory.Slideshow.Left(event, element);
+						Projects.Factory.Slideshow.Left(_event, $newElement);
 
 						$(element).on('mousemove', function(e){
 							if (e.pageX > _middle) {
 								window.clearInterval(Projects.Factory.Slideshow.goRight);
 								window.clearInterval(Projects.Factory.Slideshow.goLeft);
-								Projects.Factory.Slideshow.Right(event, element);
+								Projects.Factory.Slideshow.Right(_event, $newElement);
 							}
 						});
 					}

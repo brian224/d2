@@ -1,4 +1,24 @@
-﻿@include keyframes(flicker) {
+﻿@include keyframes(set-height) {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: 2px;
+	}
+}
+
+@include keyframes(set-width) {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 2px;
+	}
+}
+
+@include keyframes(flicker) {
 	0% , 30% , 100% {
 		@include opacity(0);
 	}
@@ -79,9 +99,25 @@
 		> .list {
 			height: 20%;
 			position: relative;
-			border-top: 2px solid #fff;
-			border-bottom: 2px solid #fff;
 			@include box-sizing(border-box);
+			@include transition(z-index 0.5s 1s);
+
+			&:before, &:after {
+				content: '';
+				background: #fff;
+				display: block;
+				width: 100%;
+				height: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include animation(set-height 0.5s 1s ease-in-out forwards);
+			}
+
+			&:after {
+				top: auto;
+				bottom: 0;
+			}
 
 			&:hover {
 				.price-title {
@@ -99,7 +135,7 @@
 			@for $i from 2 through 5 {
 				&:nth-child(#{$i}) {
 					.price-title, .item-list .list .img-wrap {
-						@include animation-delay(0.2s * ($i - 1));
+						@include animation-delay(0.2s * ($i - 1) + 1.5s);
 					}
 				}
 			}
@@ -110,7 +146,7 @@
 			}
 
 			.price-title, .item-list .list .img-wrap {
-				@include animation(flicker 1s ease-in-out forwards);
+				@include animation(flicker 1s 1.5s ease-in-out forwards);
 			}
 		}
 
@@ -149,11 +185,26 @@
 				width: 265px;
 				height: 100%;
 				position: relative;
-				border-right: 2px solid #fff;
-				border-left: 2px solid #fff;
 				vertical-align: top;
 				text-align: center;
 				@include box-sizing(border-box);
+
+				&:before, &:after {
+					content: '';
+					background: #fff;
+					display: block;
+					width: 0;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include animation(set-width 0.5s 1s ease-in-out forwards);
+				}
+
+				&:after {
+					left: auto;
+					right: 0;
+				}
 
 				&:hover .b-link {
 					@include opacity(1);
