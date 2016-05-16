@@ -111,7 +111,7 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				@include animation(set-height 0.5s 1s ease-in-out forwards);
+				@include animation(set-height 0.25s 1s ease-in-out forwards);
 			}
 
 			&:after {
@@ -146,7 +146,7 @@
 			}
 
 			.price-title, .item-list .list .img-wrap {
-				@include animation(flicker 1s 1.5s ease-in-out forwards);
+				@include animation(flicker 4s 1.5s ease-in-out forwards);
 			}
 		}
 
@@ -198,7 +198,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					@include animation(set-width 0.5s 1s ease-in-out forwards);
+					@include animation(set-width 0.25s 1s ease-in-out forwards);
 				}
 
 				&:after {

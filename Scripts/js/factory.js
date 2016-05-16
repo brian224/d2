@@ -18,7 +18,7 @@
 			_Dynamic   : null,
 			_OS        : null,
 			Page       : function(){
-				var _time = (parseFloat($('.type-list.approach>.list:last-child .price-title').css('animation-delay') , 10) * 1000) + (parseFloat($('.type-list.approach>.list:last-child .price-title').css('animation-duration') , 10) * 1000);
+				var _time = (parseFloat($('.type-list.approach>.list .price-title').css('animation-duration') , 10) * 1000);
 				
 				setTimeout(function(){
 					$('.approach').removeClass('approach');
@@ -40,6 +40,10 @@
 								window.clearInterval(Projects.Factory.Slideshow.goRight);
 								window.clearInterval(Projects.Factory.Slideshow.goLeft);
 								Projects.Factory.Slideshow.Left(_event, $newElement);
+							} else {
+								window.clearInterval(Projects.Factory.Slideshow.goRight);
+								window.clearInterval(Projects.Factory.Slideshow.goLeft);
+								Projects.Factory.Slideshow.Right(_event, $newElement);
 							}
 						});
 					} else {
@@ -50,6 +54,10 @@
 								window.clearInterval(Projects.Factory.Slideshow.goRight);
 								window.clearInterval(Projects.Factory.Slideshow.goLeft);
 								Projects.Factory.Slideshow.Right(_event, $newElement);
+							} else {
+								window.clearInterval(Projects.Factory.Slideshow.goRight);
+								window.clearInterval(Projects.Factory.Slideshow.goLeft);
+								Projects.Factory.Slideshow.Left(_event, $newElement);
 							}
 						});
 					}
